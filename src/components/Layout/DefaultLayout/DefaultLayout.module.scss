@@ -1,0 +1,9 @@
+.wrappper {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 50px;
+    padding: 0 var(--padding-primary);
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}

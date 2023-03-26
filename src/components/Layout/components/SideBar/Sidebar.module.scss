@@ -1,0 +1,51 @@
+.wrapper {
+    overscroll-behavior-y: contain;
+    bottom: 0;
+    top: calc(var(--default-layout_header-height) + 15px);
+    perspective-origin: bottom right;
+    overflow-y: auto;
+    &:hover::-webkit-scrollbar-thumb {
+        visibility: visible;
+        transition: all 0.2s linear;
+    }
+    width: 100%;
+    padding: 10px 0;
+}
+.wrapper::-webkit-scrollbar {
+    border-radius: 10px;
+    width: 6px;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+.wrapper::-webkit-scrollbar-thumb {
+    visibility: hidden;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.088);
+}
+.wrapper::-webkit-scrollbar-track {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0);
+}
+.wrapper-header img {
+    width: 3.7rem;
+    height: 3.7rem;
+    border-radius: 50px;
+}
+.wrapper-header {
+    display: flex;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+.logo_name {
+    font-family: 'Pacifico', cursive;
+    font-size: 3rem;
+    line-height: 3.2rem;
+    font-weight: bold 600;
+    color: rgba(194, 9, 9, 0.786);
+    margin-left: 1.2rem;
+}
+.title_heading {
+    color: var(--priamry-text);
+    font-size: 2.1rem;
+    margin: 1.4rem 0;
+}
