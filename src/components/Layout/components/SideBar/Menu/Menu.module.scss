@@ -2,17 +2,10 @@
     display: flex;
     align-items: center;
     padding: 9px 9px;
-    border-radius: 5px;
     transition: all 0.2s linear;
     text-decoration: none;
     &.active {
-        color: var(--primary);
-        .icon {
-            display: none;
-        }
-        .active-icon {
-            display: block;
-        }
+        color: red;
     }
 }
 .menu_item:hover {

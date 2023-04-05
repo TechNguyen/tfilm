@@ -2,19 +2,20 @@ import styles from './Menu.module.scss'
 import classNames from 'classnames/bind'
 import PropTypes from 'prop-types'
 import { NavLink } from 'react-router-dom'
-
+import { useEffect, useState } from 'react'
+import config from '~/config/config'
 const cx = classNames.bind(styles)
 
 function MenuItem({ title, to, icon, activeIcon }) {
     return (
         <NavLink
-            end
             to={to}
             className={(nav) =>
                 cx('menu_item', {
                     active: nav.isActive,
                 })
             }
+            end
         >
             <span className={cx('icon')}>{icon}</span>
             <span className={cx('active-icon')}>{activeIcon}</span>

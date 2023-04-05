@@ -1,9 +1,18 @@
 const routers = {
     home: '/',
-    following: '/following',
-    profile: '/@:nickname',
-    upload: '/upload',
-    search: '/search',
-    live: '/live',
+    community: '/community',
+    detail: '/detail',
+    discovery: '/discovery',
+    comming: '/comming',
+    friends: '/friends',
+    parties: 'parties',
+    media: '/media',
+    genre: '/genre',
+    nation: '/nation',
+    series: '/series',
+    odd: '/odd',
+    setting: '/setting',
+    loggin: '/loggin',
+    Logout: '/Logout',
 }
 export default routers

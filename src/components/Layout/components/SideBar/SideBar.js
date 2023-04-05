@@ -19,105 +19,10 @@ import {
     faFilm,
     faStrikethrough,
 } from '@fortawesome/free-solid-svg-icons'
+import { MenuList, Social, Navigation, General } from '~/components/Infornav/infornav'
+import { useState } from 'react'
 const cx = classNames.bind(Styles)
-const MenuList = [
-    {
-        to: '/',
-        title: 'Home',
-        icon: <FontAwesomeIcon icon={faHouse} />,
-        iconActive: <FontAwesomeIcon icon={faHouse} style={{ color: '#0d039b' }} />,
-    },
-    {
-        to: '/',
-        title: 'Community',
-        icon: <FontAwesomeIcon icon={faGlobe} />,
-        iconActive: <FontAwesomeIcon icon={faGlobe} style={{ color: '#0d039b' }} />,
-    },
-    {
-        to: '/',
-        title: 'Discovery',
-        icon: <FontAwesomeIcon icon={faCoins} />,
-        iconActive: <FontAwesomeIcon icon={faCoins} style={{ color: '#0d039b' }} />,
-    },
-    {
-        to: '/',
-        title: 'Comming soon',
-        icon: <FontAwesomeIcon icon={faClock} />,
-        iconActive: <FontAwesomeIcon icon={faClock} style={{ color: '#0d039b' }} />,
-    },
-]
-const Social = [
-    {
-        to: '/',
-        title: 'Friends',
-        icon: <FontAwesomeIcon icon={faUserGroup} />,
-        iconActive: <FontAwesomeIcon icon={faUserGroup} style={{ color: '#0d039b' }} />,
-    },
-    {
-        to: '/',
-        title: 'Parties',
-        icon: <FontAwesomeIcon icon={faCompass} />,
-        iconActive: <FontAwesomeIcon icon={faCompass} style={{ color: '#0d039b' }} />,
-    },
-    {
-        to: '/',
-        title: 'Media',
-        icon: <FontAwesomeIcon icon={faSquare} />,
-        iconActive: <FontAwesomeIcon icon={faSquare} style={{ color: '#0d039b' }} />,
-    },
-]
-const Navigation = [
-    {
-        to: '/',
-        title: 'Genre',
-        icon: <FontAwesomeIcon icon={faRecycle} />,
-        iconActive: <FontAwesomeIcon icon={faRecycle} style={{ color: '#0d039b' }} />,
-    },
-    {
-        to: '/',
-        title: 'Nation',
-        icon: <FontAwesomeIcon icon={faLocation} />,
-        iconActive: <FontAwesomeIcon icon={faLocation} style={{ color: '#0d039b' }} />,
-    },
-    {
-        to: '/',
-        title: 'Series movie',
-        icon: <FontAwesomeIcon icon={faFilm} />,
-        iconActive: <FontAwesomeIcon icon={faFilm} style={{ color: '#0d039b' }} />,
-    },
-    {
-        to: '/',
-        title: 'Odd movie',
-        icon: <FontAwesomeIcon icon={faStrikethrough} />,
-        iconActive: (
-            <FontAwesomeIcon icon={faStrikethrough} style={{ color: '#0d039b' }} />
-        ),
-    },
-]
-const General = [
-    {
-        to: '/',
-        title: 'Setting',
-        icon: <FontAwesomeIcon icon={faGear} />,
-        iconActive: <FontAwesomeIcon icon={faGear} style={{ color: '#0d039b' }} />,
-    },
-    {
-        to: '/',
-        title: 'Log In',
-        icon: <FontAwesomeIcon icon={faRightFromBracket} />,
-        iconActive: (
-            <FontAwesomeIcon icon={faRightFromBracket} style={{ color: '#0d039b' }} />
-        ),
-    },
-    {
-        to: '/',
-        title: 'Log Out',
-        icon: <FontAwesomeIcon icon={faRightFromBracket} />,
-        iconActive: (
-            <FontAwesomeIcon icon={faRightFromBracket} style={{ color: '#0d039b' }} />
-        ),
-    },
-]
+
 function Sidebar(props) {
     return (
         <div className={cx('wrapper')}>
