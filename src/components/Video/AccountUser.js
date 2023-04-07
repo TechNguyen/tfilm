@@ -4,10 +4,8 @@ import classNames from 'classnames/bind'
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons'
 import Images from '../Images'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Wrapper as PopperWrapper } from '~/components/Popper/Popper'
 import Tippy from '@tippyjs/react/headless'
 import 'tippy.js/dist/tippy.css'
-import UserPreview from './UserPreview/UserPreview'
 const cx = classNames.bind(Styles)
 function AccountUser({
     avatar,
@@ -20,22 +18,7 @@ function AccountUser({
     bio,
 }) {
     const preview = () => {
-        return (
-            <div className={cx('preview')}>
-                <PopperWrapper>
-                    <UserPreview
-                        avatar={avatar}
-                        nickname={nickname}
-                        firstname={firstname}
-                        lastname={lastname}
-                        tick={tick}
-                        followersCount={followersCount}
-                        likesCount={likesCount}
-                        bio={bio}
-                    />
-                </PopperWrapper>
-            </div>
-        )
+        return <div className={cx('preview')}></div>
     }
     return (
         <Tippy interactive render={preview} delay={[800, 300]} placement="bottom">

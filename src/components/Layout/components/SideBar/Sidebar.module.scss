@@ -9,22 +9,24 @@
         transition: all 0.2s linear;
     }
     width: 100%;
-    padding: 10px 0;
-    border-radius: 30px;
+    padding: 20px 10px;
+    border-radius: 10px;
+    background-color: rgb(0, 0, 0);
+    overflow-x: hidden;
 }
 .wrapper::-webkit-scrollbar {
     border-radius: 10px;
     width: 6px;
-    background-color: rgba(255, 255, 255, 0.08);
+    background-color: rgb(26, 24, 24);
 }
 .wrapper::-webkit-scrollbar-thumb {
     visibility: hidden;
     border-radius: 4px;
-    background-color: rgba(0, 0, 0, 0.088);
+    background-color: rgba(179, 179, 179, 0.088);
 }
 .wrapper::-webkit-scrollbar-track {
     border-radius: 4px;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(113, 113, 113, 0.088);
 }
 .wrapper-header img {
     width: 3.7rem;
@@ -42,7 +44,7 @@
     font-size: 3rem;
     line-height: 3.2rem;
     font-weight: bold 600;
-    color: rgba(194, 9, 9, 0.786);
+    color: rgba(255, 64, 0, 0.805);
     margin-left: 1.2rem;
 }
 .title_heading {

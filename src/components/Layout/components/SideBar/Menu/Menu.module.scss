@@ -1,15 +1,26 @@
+.wrapper-list {
+    display: block;
+    position: relative;
+}
 .menu_item {
     display: flex;
     align-items: center;
     padding: 9px 9px;
     transition: all 0.2s linear;
     text-decoration: none;
+    color: rgba(190, 190, 215, 0.83);
     &.active {
-        color: red;
+        color: rgb(247, 115, 72);
+        border-right: 4px solid rgb(180, 48, 4);
+        transition: all 0.2s linear;
+        background-color: rgb(27, 27, 28);
+        font-size: 1.9rem;
     }
+    border-radius: 3px;
+    transition: all linear 0.3s;
 }
 .menu_item:hover {
-    background-color: rgba(22, 24, 35, 0.03);
+    background-color: rgb(27, 27, 28);
 }
 .menu-item_title {
     font-weight: 700;
@@ -26,4 +37,61 @@
 .isWindow {
     display: flex;
     justify-content: center;
+}
+.nav-lists {
+    width: 100%;
+}
+.iconCheck {
+    position: absolute;
+    right: 10%;
+}
+.transformIcon {
+    animation: rotateforIcon 0.3s linear forwards;
+}
+.transformbforeIcon {
+    animation: rotateforbeforeIcon 0.3s linear forwards;
+}
+@keyframes rotateforIcon {
+    to {
+        transform: rotate(90deg);
+    }
+}
+@keyframes rotateforbeforeIcon {
+    to {
+        transform: rotate(-90deg);
+    }
+}
+.showHiden {
+    animation: show 0.5s ease-in forwards;
+    transition: all 0.5s ease-in;
+}
+.hidenNav {
+    transition: all 0.5s ease-in;
+    animation: hiden 0.5s ease-in forwards;
+}
+@keyframes show {
+    0% {
+        height: 0;
+        display: none;
+        opacity: 0;
+    }
+    100% {
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+        opacity: 1;
+    }
+}
+@keyframes hiden {
+    0% {
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+        opacity: 1;
+    }
+    100% {
+        height: 0;
+        display: block;
+        opacity: 0;
+    }
 }
