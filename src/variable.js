@@ -1,12 +1,10 @@
 import axios from 'axios'
-import { options } from '~/option'
 import { useState } from 'react'
 let fullList = []
-options.url = 'https://moviesdatabase.p.rapidapi.com/titles/utils/genres'
 axios
-    .request(options)
+    .get(`${process.env.REACT_APP_API_KEY}/the-loai`)
     .then((res) => {
-        for (let x of res.data.results.splice(1)) {
+        for (let x of res.data) {
             fullList.push(x)
         }
     })

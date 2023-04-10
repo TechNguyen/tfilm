@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import fullList from '~/variable'
 import config from '~/config/config'
+import fullNav from '~/navigation'
 
 const cx = classNames.bind(styles)
 
@@ -31,23 +32,46 @@ function MenuItem({ title, to, icon, activeIcon }) {
                 <span className={cx('icon')}>{icon}</span>
                 <span className={cx('active-icon')}>{activeIcon}</span>
                 <span className={cx('menu-item_title')}>{title}</span>
-                {title === 'Genre' ? (
+                {title === 'Thể loại' ? (
                     shownav === true ? (
                         <FontAwesomeIcon
                             icon={faChevronRight}
-                            className={cx('iconCheck')}
+                            className={cx('iconCheck', {
+                                transformIcon: true,
+                            })}
                         />
                     ) : (
                         <FontAwesomeIcon
                             icon={faChevronRight}
-                            className={cx('iconCheck')}
+                            className={cx('iconCheck', {
+                                transformbforeIcon: !shownav,
+                            })}
+                        />
+                    )
+                ) : (
+                    <></>
+                )}
+                {title === 'Quốc gia' ? (
+                    shownav === true ? (
+                        <FontAwesomeIcon
+                            icon={faChevronRight}
+                            className={cx('iconCheck', {
+                                transformIcon: true,
+                            })}
+                        />
+                    ) : (
+                        <FontAwesomeIcon
+                            icon={faChevronRight}
+                            className={cx('iconCheck', {
+                                transformbforeIcon: !shownav,
+                            })}
                         />
                     )
                 ) : (
                     <></>
                 )}
             </NavLink>
-            {title === 'Genre' && (
+            {title === 'Thể loại' && (
                 <div
                     className={cx('nav-lists', {
                         showHiden: shownav,
@@ -55,6 +79,16 @@ function MenuItem({ title, to, icon, activeIcon }) {
                     })}
                 >
                     <Navbar item={title} fullList={fullList} />
+                </div>
+            )}
+            {title === 'Quốc gia' && (
+                <div
+                    className={cx('nav-lists', {
+                        showHiden: shownav,
+                        hidenNav: !shownav,
+                    })}
+                >
+                    <Navbar item={title} fullList={fullNav} />
                 </div>
             )}
         </div>

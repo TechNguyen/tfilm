@@ -8,9 +8,10 @@ const cx = classNames.bind(styles)
 function DefaultLayout({ children }) {
     return (
         <div className={cx('wrappper')}>
-            <SideBar />
+            {children}
+            {/* <SideBar />
             <Content />
-            <Search />
+            <Search /> */}
         </div>
     )
 }

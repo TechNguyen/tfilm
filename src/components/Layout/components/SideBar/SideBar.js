@@ -19,7 +19,7 @@ import {
     faFilm,
     faStrikethrough,
 } from '@fortawesome/free-solid-svg-icons'
-import { MenuList, Social, Navigation, General } from '~/components/Infornav/infornav'
+import { MenuList, Navigation, General } from '~/components/Infornav/infornav'
 import { useState } from 'react'
 const cx = classNames.bind(Styles)
 
@@ -36,18 +36,6 @@ function Sidebar(props) {
                 <Menu>
                     <p className={cx('title_heading')}>Menu</p>
                     {MenuList.map((item, index) => (
-                        <MenuItem
-                            to={item.to}
-                            title={item.title}
-                            icon={item.icon}
-                            activeIcon={item.iconActive}
-                            key={index}
-                        />
-                    ))}
-                </Menu>
-                <Menu>
-                    <p className={cx('title_heading')}>Social</p>
-                    {Social.map((item, index) => (
                         <MenuItem
                             to={item.to}
                             title={item.title}
