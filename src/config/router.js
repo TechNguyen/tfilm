@@ -15,5 +15,6 @@ const routers = {
     loggin: '/loggin',
     Logout: '/Logout',
     video: '/phim/:slug',
+    detailVideo: '/phim/:slug/:num',
 }
 export default routers

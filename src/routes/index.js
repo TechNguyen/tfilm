@@ -15,6 +15,7 @@ import Setting from '~/pages/setting/setting'
 import Loggout from '~/pages/Logout/Logout'
 import Loggin from '~/pages/loggin/loggin'
 import Video from '~/pages/Video/Video'
+import WatchVideo from '~/pages/WatchVideo/WatchVideo'
 const publicRoutes = [
     { path: config.routers.home, component: Home },
     { path: config.routers.detail, component: DetailFilm },
@@ -32,6 +33,7 @@ const publicRoutes = [
     { path: config.routers.Logout, component: Loggout },
     { path: config.routers.media, component: Media },
     { path: config.routers.video, component: Video },
+    { path: config.routers.detailVideo, component: WatchVideo },
 ]
 const privateRoutes = []
 

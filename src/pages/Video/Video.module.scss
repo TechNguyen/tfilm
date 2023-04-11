@@ -1,3 +1,21 @@
 .wrapper {
     background-color: aqua;
 }
+.video-poster {
+    width: 300px;
+}
+.video-poster img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+}
+.video-esp_num {
+    padding: 1rem;
+    transition: all linear 0.2s;
+    border-radius: 4px;
+    margin: 0.2rem 0.3rem;
+    &:hover {
+        background-color: rgb(183, 115, 66);
+        color: beige;
+    }
+}
