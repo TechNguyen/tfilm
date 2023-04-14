@@ -9,8 +9,7 @@ function Video() {
     const [dataMovie, setDatamovie] = useState(null)
     const navigate = useNavigate()
     const handleVideo = (num, name) => {
-        console.log(num, name)
-        // navigate(`/phim/${name}/${num}`)
+        navigate(`/phim/${name}/${num}`)
     }
     const { slug } = useParams()
     useEffect(() => {
@@ -38,7 +37,6 @@ function Video() {
         const trailer = movieItem.trailer
         const slug = movieItem.slug
         const episodes = dataMovie.moviPro.episodes[0].server_data
-        console.log(episodes)
         return (
             <div className={cx('wrapper')}>
                 <div className={cx('video-detail')}>
@@ -101,7 +99,7 @@ function Video() {
                             <button
                                 className={cx('video-esp_num')}
                                 key={index}
-                                onClick={(esp) => handleVideo(esp, slug)}
+                                onClick={() => handleVideo(esp.name,slug)}
                             >
                                 {esp.name}
                             </button>
@@ -113,7 +111,7 @@ function Video() {
                     <h1>
                         {movieItem.name} - {movieItem.origin_name} '({movieItem.year})'
                     </h1>
-                    <p className={cx('video-content_title')}>{movieItem.content}</p>
+                    <span className={cx('video-content_title')}>{movieItem.content}</span>
                     <div className={cx('video-poster')}>
                         <img src={videoPoster} alt="video-poster" />
                     </div>

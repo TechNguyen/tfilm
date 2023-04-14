@@ -2,7 +2,7 @@ import classNames from 'classnames/bind'
 import Styles from './films.module.scss'
 import listbanner from '~/listBanner'
 import { useCallback, useState } from 'react'
-
+import SearchMovie from './searchMovie/searchMovie'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay } from '@fortawesome/free-solid-svg-icons'
 import {
@@ -13,7 +13,6 @@ import {
     Routes,
     useNavigate,
 } from 'react-router-dom'
-import actionVideo from './actionVideo/actionVideo'
 const cx = classNames.bind(Styles)
 function Films({ title }) {
     const [showFilmAction, setAction] = useState(false)
@@ -26,6 +25,7 @@ function Films({ title }) {
     }
     return (
         <div className={cx('movie_banner_wrapper')}>
+            <SearchMovie />
             <p className={cx('movie-title')}>{title}</p>
             {listbanner.map((item, index) => (
                 <div
