@@ -1,0 +1,21 @@
+.form-search {
+    display: flex;
+    margin-bottom: var(--padding-primary);
+}
+.form-group {
+}
+.form-group label {
+    font-size: 1.8rem;
+    color: var(--priamry-text);
+    margin-right: 10px;
+}
+.form-group select {
+    margin-right: 40px;
+    appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    padding: 5px 40px 5px 10px;
+    background-color: var(--primary-color);
+    color: var(--text-select);
+}

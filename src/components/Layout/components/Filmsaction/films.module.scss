@@ -1,31 +1,16 @@
 .movie_banner_wrapper {
 }
-.movie-item {
-    width: 220px;
-    color: white;
-    margin: 1rem;
-    padding: 10px 13px;
-    background-color: rgba(43, 43, 43, 0.699);
-    border-bottom: 1px solid rgb(247, 115, 72);
+.movie-title {
+    color: var(--priamry-text);
+    font-size: 2.2rem;
+    margin-bottom: 20px;
 }
-.films-item {
-    width: 100%;
+.movie__num-page {
+    padding: 10px 15px;
+    border: 1px solid;
     cursor: pointer;
 }
-.films-item img {
-    width: 100%;
-    object-fit: contain;
-    object-position: center;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-.film-name {
-    font-size: 15px;
-    margin: 7px 0;
-}
-.film-button {
-    padding: 1rem 1.2rem;
-}
-.film-btn-icon {
-    margin-right: 0.4rem;
+.movie__pagination {
+    display: flex;
+    justify-content: center;
 }

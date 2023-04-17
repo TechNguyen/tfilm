@@ -4,6 +4,7 @@ let listbanner = []
 axios
     .get(`${process.env.REACT_APP_API_KEY}/danh-sach/phim-moi-cap-nhat`)
     .then((res) => {
+        console.log(res.data.items)
         for (let x of res.data.items) {
             axios
                 .get(`https://ophim1.com/phim/${x.slug}`)
@@ -16,4 +17,5 @@ axios
     .catch((err) => {
         console.log(err)
     })
+
 export default listbanner

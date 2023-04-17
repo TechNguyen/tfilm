@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind'
 import Styles from './searchMovie.module.scss'
-import { NavLink, Route } from 'react-router-dom'
+import { NavLink, Route, useNavigate } from 'react-router-dom'
 import { element } from 'prop-types'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
@@ -11,20 +11,33 @@ function SearchMovie() {
     const [IdGenre, setIdGenre] = useState(null)
     const [IdNation, setIdNation] = useState(null)
     const [load, setLoad] = useState(true)
+    const navigate = useNavigate()
     const handleSearch = (e) => {
         e.preventDefault()
-        console.log(IdGenre, IdNation)
+        if (IdGenre === null) {
+            setIdGenre({
+                id: listNation.genre[0]._id,
+                name: listNation.genre[0].name,
+            })
+        }
+        if (IdNation === null) {
+            setIdNation({
+                id: listNation.nation[0]._id,
+                name: listNation.nation[0].name,
+            })
+        }
+        navigate(`phim/${IdGenre.name}/${IdNation.name}`)
     }
     const handleOnchangeGenre = (e) => {
         setIdGenre({
             id: e.target.value,
-            name: e.target,
+            name: e.target.options[e.target.selectedIndex].text,
         })
     }
     const handleOnchangeNation = (e) => {
         setIdNation({
             id: e.target.value,
-            name: e.target,
+            name: e.target.options[e.target.selectedIndex].text,
         })
     }
     useEffect(() => {
@@ -48,13 +61,14 @@ function SearchMovie() {
     }, [])
     if (listNation) {
         return (
-            <form action="">
+            <form action="" className={cx('form-search')}>
                 <div className={cx('form-group')}>
-                    <label for="genreFilms">Chon the loai</label>
+                    <label for="genreFilms">Thể loại</label>
                     <select
                         name="genre"
                         id="genreFilms"
                         onChange={(e) => handleOnchangeGenre(e)}
+                        className={cx('select-data')}
                     >
                         {listNation.genre.map((item, index) => (
                             <option value={item._id} key={index} title={item.name}>
@@ -64,11 +78,12 @@ function SearchMovie() {
                     </select>
                 </div>
                 <div className={cx('form-group')}>
-                    <label for="nationfilms">Chon quoc gia</label>
+                    <label for="nationfilms">Quốc Gia</label>
                     <select
                         name="nation"
                         id="nationfilms"
                         onChange={(e) => handleOnchangeNation(e)}
+                        className={cx('select-data')}
                     >
                         {listNation.nation.map((item, index) => (
                             <option value={item._id} key={index} title={item.name}>
@@ -77,8 +92,7 @@ function SearchMovie() {
                         ))}
                     </select>
                 </div>
-
-                <button onClick={(e) => handleSearch(e)}>Loc phim</button>
+                <button onClick={(e) => handleSearch(e)}>Duyet p</button>
             </form>
         )
     }

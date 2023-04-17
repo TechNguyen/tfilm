@@ -8,7 +8,7 @@ function Content() {
     return (
         <div className={cx('wrapper')}>
             <nav className={cx('film-nav')}></nav>
-            <Films title={'Danh sach phim moi'} />
+            <Films title={'Danh sách phim mới'} />
         </div>
     )
 }
