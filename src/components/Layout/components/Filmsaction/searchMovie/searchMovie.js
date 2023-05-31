@@ -92,7 +92,7 @@ function SearchMovie() {
                         ))}
                     </select>
                 </div>
-                <button onClick={(e) => handleSearch(e)}>Duyet p</button>
+                <button onClick={(e) => handleSearch(e)}>Duyet phim</button>
             </form>
         )
     }
