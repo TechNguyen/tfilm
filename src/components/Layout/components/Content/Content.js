@@ -7,7 +7,9 @@ import ItemBanner from '../ItemBanner/ItemBanner'
 import { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
+import 'swiper/css/autoplay'
 import axios from 'axios'
+import { Autoplay, EffectFade } from 'swiper'
 
 const cx = classNames.bind(Styles)
 function Content({ data }) {
@@ -26,9 +28,16 @@ function Content({ data }) {
             <div className={cx('wrapper')}>
                 <Swiper
                     spaceBetween={30}
-                    slidesPerView={3}
-                    onSlideChange={() => console.log('slide change')}
-                    onSwiper={(swiper) => console.log(swiper)}
+                    slidesPerView={1}
+                    modules={[Autoplay, EffectFade]}
+                    effect="fade"
+                    loop={true}
+                    centeredSlides={true}
+                    autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    }}
+                    height={100}
                 >
                     {listBanner.map((item, index) => (
                         <SwiperSlide>

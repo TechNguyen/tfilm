@@ -17,8 +17,6 @@ function MovieItem({ item, index }) {
     const handleView = (item) => {
         navigate(`/phim/${item}`)
     }
-
-    console.log(item)
     return (
         <div
             className={cx('movie-item')}

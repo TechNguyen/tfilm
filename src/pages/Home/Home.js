@@ -9,7 +9,7 @@ function Home(props) {
     return (
         <>
             <Sidebar />
-            <Content />
+            <Content  />
             <SearchHeader />
         </>
     )
