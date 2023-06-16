@@ -1,8 +1,10 @@
 .wrapper {
     background-color: aqua;
+    grid-column-start: 1;
+    grid-column-end: 4;
 }
 .video-poster {
-    width: 300px;
+    width: 400px;
 }
 .video-poster img {
     object-fit: cover;
@@ -18,4 +20,11 @@
         background-color: rgb(183, 115, 66);
         color: beige;
     }
+}
+.video-detail {
+    display: flex;
+    justify-content: space-between;
+}
+.video__title {
+    padding: 5px;
 }

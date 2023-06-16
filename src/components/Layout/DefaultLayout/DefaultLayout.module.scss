@@ -1,6 +1,6 @@
 .wrappper {
     width: 100vw;
-    height: 100vh;
+    min-height: max-content;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     column-gap: 50px;

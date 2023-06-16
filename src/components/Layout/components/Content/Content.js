@@ -12,6 +12,7 @@ import axios from 'axios'
 import { Autoplay, EffectFade } from 'swiper'
 
 const cx = classNames.bind(Styles)
+
 function Content({ data }) {
     const [listBanner, setListBanner] = useState(null)
     useEffect(() => {
@@ -37,7 +38,7 @@ function Content({ data }) {
                         delay: 2500,
                         disableOnInteraction: false,
                     }}
-                    height={100}
+                    height={'200px'}
                 >
                     {listBanner.map((item, index) => (
                         <SwiperSlide>
@@ -45,7 +46,6 @@ function Content({ data }) {
                         </SwiperSlide>
                     ))}
                 </Swiper>
-
                 <Films title={'Danh sách phim mới'} />
             </div>
         )

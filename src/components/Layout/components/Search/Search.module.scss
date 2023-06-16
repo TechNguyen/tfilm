@@ -29,6 +29,11 @@
 .header-input:not(:placeholder-shown) ~ .search-btn {
     color: rgba(22, 24, 35, 0.742);
 }
+.wrapper {
+    background-color: rgb(0, 0, 0);
+    padding: 20px 10px;
+    border-radius: 10px;
+}
 .header-clear {
     cursor: pointer;
     color: var(--search-color-icon);
@@ -129,4 +134,15 @@ input [tabindex] {
 }
 .isMobile {
     display: none;
+}
+.input__search {
+    font-size: 20px;
+    background-color: #eee;
+    border-radius: 12px;
+    padding: 10px;
+    border: 1px solid;
+}
+.input__search :active {
+    border: none;
+    outline: none;
 }

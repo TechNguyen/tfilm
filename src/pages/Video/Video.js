@@ -38,73 +38,120 @@ function Video() {
         const slug = movieItem.slug
         const episodes = dataMovie.moviPro.episodes[0].server_data
         return (
-            <div className={cx('wrapper')}>
+            <div className={cx('wrapper')} style={{ backgroundImage: `${videoPoster}` }}>
                 <div className={cx('video-detail')}>
-                    <div className={cx('video-poster')}>
+                    <div className={cx('video-poster')} style={{ borderRadius: '20px' }}>
                         <img src={movieItem.thumb_url} alt="posterImg" />
                     </div>
-                    <div className={cx('video-infor')}>
-                        <h1>{movieItem.name}</h1>
-                        <h3>{movieItem.origin_name}</h3>
-                        <span className={cx('video-directora')}>
-                            Đạo diễn:
-                            {arrDirector.map((item, index) => (
-                                <p key={index}>{item}</p>
-                            ))}
-                        </span>
-                        <span className={cx('video-actors')}>
-                            Diễn Viên:
-                            {arrActor.map((item, index) => (
-                                <p key={index}>{item}</p>
-                            ))}
-                        </span>
-                        <span className={cx('video-genre')}>
-                            Thể loại:
-                            {movieGenre.map((item, index) => (
-                                <p key={item.id}>{item.name}</p>
-                            ))}
-                        </span>
-                        <span className={cx('video-genre')}>
-                            Quốc gia:
-                            {movieNation.map((item, index) => (
-                                <p key={item.id}>{item.name}</p>
-                            ))}
-                        </span>
-                        <span className={cx('video-genre')}>
-                            Thời lượng:
-                            <p>{movieItem.time}</p>
-                        </span>
-                        <span className={cx('video-genre')}>
-                            Đang phát:
-                            <p>{movieItem.episode_current}</p>
-                        </span>
-                        <span className={cx('video-genre')}>
-                            Lượt xem:
-                            <p>{movieItem.view}</p>
-                        </span>
-                        <span className={cx('video-genre')}>
-                            Năm phát hành:
-                            <p>{movieItem.year}</p>
-                        </span>
-                        <span className={cx('video-genre')}>
-                            Chất lượng:
-                            <p>{movieItem.quality}</p>
-                        </span>
-
-                        <button>{movieItem.lang}</button>
-                    </div>
-
-                    <div className={cx('video-episodes')}>
-                        {episodes.map((esp, index) => (
-                            <button
-                                className={cx('video-esp_num')}
-                                key={index}
-                                onClick={() => handleVideo(esp.name,slug)}
+                    <div className={cx('video__infor--wrapper')}>
+                        <div className={cx('video-infor')}>
+                            <h1>{movieItem.name}</h1>
+                            <h3>{movieItem.origin_name}</h3>
+                            <span
+                                className={cx('video-directora', {
+                                    video__title: true,
+                                })}
+                                style={{ display: 'flex' }}
                             >
-                                {esp.name}
-                            </button>
-                        ))}
+                                Đạo diễn:
+                                {arrDirector.map((item, index) => (
+                                    <p key={index}>{item}</p>
+                                ))}
+                            </span>
+                            <span
+                                className={cx('video-actors', {
+                                    video__title: true,
+                                })}
+                                style={{ display: 'flex' }}
+                            >
+                                Diễn Viên:
+                                {arrActor.map((item, index) => (
+                                    <p key={index}>{item}</p>
+                                ))}
+                            </span>
+                            <span
+                                className={cx('video-genre', {
+                                    video__title: true,
+                                })}
+                                style={{ display: 'flex' }}
+                            >
+                                Thể loại:
+                                {movieGenre.map((item, index) => (
+                                    <p key={item.id}>{item.name}</p>
+                                ))}
+                            </span>
+                            <span
+                                className={cx('video-genre', {
+                                    video__title: true,
+                                })}
+                                style={{ display: 'flex' }}
+                            >
+                                Quốc gia:
+                                {movieNation.map((item, index) => (
+                                    <p key={item.id}>{item.name}</p>
+                                ))}
+                            </span>
+                            <span
+                                className={cx('video-genre', {
+                                    video__title: true,
+                                })}
+                                style={{ display: 'flex' }}
+                            >
+                                Thời lượng:
+                                <p>{movieItem.time}</p>
+                            </span>
+                            <span
+                                className={cx('video-genre', {
+                                    video__title: true,
+                                })}
+                                style={{ display: 'flex' }}
+                            >
+                                Đang phát:
+                                <p>{movieItem.episode_current}</p>
+                            </span>
+                            <span
+                                className={cx('video-genre', {
+                                    video__title: true,
+                                })}
+                                style={{ display: 'flex' }}
+                            >
+                                Lượt xem:
+                                <p>{movieItem.view}</p>
+                            </span>
+                            <span
+                                className={cx('video-genre', {
+                                    video__title: true,
+                                })}
+                                style={{ display: 'flex' }}
+                            >
+                                Năm phát hành:
+                                <p>{movieItem.year}</p>
+                            </span>
+                            <span
+                                className={cx('video-genre', {
+                                    video__title: true,
+                                })}
+                                style={{ display: 'flex' }}
+                            >
+                                Chất lượng:
+                                <p>{movieItem.quality}</p>
+                            </span>
+
+                            <button>{movieItem.lang}</button>
+                        </div>
                     </div>
+                </div>
+
+                <div className={cx('video-episodes')}>
+                    {episodes.map((esp, index) => (
+                        <button
+                            className={cx('video-esp_num')}
+                            key={index}
+                            onClick={() => handleVideo(esp.name, slug)}
+                        >
+                            {esp.name}
+                        </button>
+                    ))}
                 </div>
 
                 <div className={cx('video-content')}>

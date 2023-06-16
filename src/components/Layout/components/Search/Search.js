@@ -12,14 +12,20 @@ import styles from './Search.module.scss'
 import { useDebounce } from '~/hooks'
 import * as searchService from '~/service/searchApi'
 import fullList from '~/variable'
+import Filmweek from '../FilmofWeek/FilmWeek'
 const cx = classNames.bind(styles)
 function SearchHeader(props) {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('search')}>
-                <FontAwesomeIcon icon={faSearch} />
-                <input type="text" />
+                <input
+                    type="text"
+                    placeholder="Enter the film"
+                    className={cx('input__search')}
+                />
             </div>
+
+            <Filmweek />
         </div>
     )
 }
